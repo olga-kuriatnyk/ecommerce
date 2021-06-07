@@ -1,5 +1,5 @@
-import React from 'react';
-import Rating from "./Rrating";
+//import React from 'react';
+import Rating from "./Rating";
 
 export default function Product(props) {
   const { product } = props;
