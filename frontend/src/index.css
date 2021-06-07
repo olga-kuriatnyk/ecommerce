@@ -105,10 +105,9 @@ a.brand {
   align-items: flex-start;
 }
 .col-1 {
-  flex: 1 1 25rem;
-}
-.col-2 {
-  flex: 2 1 50rem;
+  flex: 1 1 30rem;
+  padding: 3rem;
+  font-size: 2rem;
 }
 /* Image */
 img {
