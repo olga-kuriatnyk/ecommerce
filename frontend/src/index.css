@@ -27,7 +27,7 @@ body {
 }
 header {
   grid-area: header;
-  background-color: #e1e0df;
+  background-color: #64615e;
 }
 main {
   grid-area: main;
@@ -35,8 +35,8 @@ main {
 }
 footer {
   grid-area: footer;
-  background-color: #e1e0df;
-  color: #324431;
+  background-color: #64615e;
+  color: #ffffff;
 }
 /* common */
 h1 {
@@ -81,7 +81,7 @@ input:hover,
 select:hover,
 textarea:hover,
 button:hover {
-  border: 0.1rem #404040 solid;
+  border: 0.1rem #3a3838 solid;
 }
 button.primary {
   background-color: #f0c040;
@@ -92,16 +92,16 @@ button.block {
 /* header */
 header a {
   /* all links inside header */
-  color: #324431;
+  color: #ffffff;
   padding: 1rem;
 }
 a.brand {
-  color: #324431;
+  color: #ffffff;
   font-size: 3rem;
   font-weight: bold;
 }
 .badge {
-  background-color: #c98686;
+  background-color: #ca8c8c;
   color: #ffffff;
   border-radius: 30%;
   padding: 0.2rem 0.7rem;
@@ -125,9 +125,19 @@ a.brand {
   padding: 3rem;
   font-size: 2rem;
 }
+.col-2 {
+  flex: 2 1 50rem;
+}
+.min-30 {
+  min-width: 30rem;
+}
 /* Image */
 img {
   border-radius: 0.5rem;
+}
+img.small {
+  max-width: 5rem;
+  width: 100%;
 }
 img.medium {
   max-width: 29rem;
