@@ -23,7 +23,6 @@ export default function ShippingAddressScreen(props) {
     e.preventDefault();
     dispatch(saveShippingAddress({ fullName, address, city, state, country, zipCode }));
     props.history.push('/payment');
-    // TODO: dispatch save shipping
   };
 
   return (
