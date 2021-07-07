@@ -9,8 +9,10 @@ import MessageBox from '../components/MessageBox';
 
 export default function PlaceOrderScreen(props) {
   const cart = useSelector((state) => state.cart);
-  if (!cart.paymentMethod) {
-    props.history.push('/payment');
+  const { shippingAddress } = cart;
+
+  if (!shippingAddress.address) {
+    props.history.push('/shipping');
   }
 
   const orderCreate = useSelector((state) => state.orderCreate);
@@ -39,7 +41,7 @@ export default function PlaceOrderScreen(props) {
 
   return (
     <div>
-      <CheckoutSteps step1 step2 step3 step4 ></CheckoutSteps>
+      <CheckoutSteps step1 step2 step3 ></CheckoutSteps>
       <div className="row top">
         <div className="col-2">
           <ul>
@@ -51,14 +53,6 @@ export default function PlaceOrderScreen(props) {
                   <strong>Address: </strong> {cart.shippingAddress.address},
                   {cart.shippingAddress.city}, {cart.shippingAddress.state},
                   {cart.shippingAddress.country}, {cart.shippingAddress.zipCode}
-                </p>
-              </div>
-            </li>
-            <li>
-              <div className="card card-body">
-                <h2>Payment</h2>
-                <p>
-                  <strong>Method:</strong> {cart.paymentMethod}
                 </p>
               </div>
             </li>

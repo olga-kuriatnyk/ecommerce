@@ -83,21 +83,6 @@ export default function OrderScreen(props) {
             </li>
             <li>
               <div className="card card-body">
-                <h2>Payment</h2>
-                <p>
-                  <strong>Method:</strong> {order.paymentMethod}
-                </p>
-                {order.isPaid ? (
-                  <MessageBox variant="success">
-                    Paid at {order.paidAt}
-                  </MessageBox>
-                ) : (
-                  <MessageBox variant="danger">Not Paid</MessageBox>
-                )}
-              </div>
-            </li>
-            <li>
-              <div className="card card-body">
                 <h2>Order Items</h2>
                 <ul>
                   {order.orderItems.map((item) => (
@@ -122,6 +107,19 @@ export default function OrderScreen(props) {
                 </ul>
               </div>
             </li>
+            <li>
+              <div className="card card-body">
+                <h2>Payment</h2>
+                {order.isPaid ? (
+                  <MessageBox variant="success">
+                    Paid at {order.paidAt}
+                  </MessageBox>
+                ) : (
+                  <MessageBox variant="danger">Not Paid</MessageBox>
+                )}
+              </div>
+            </li>
+
           </ul>
         </div>
         <div className="col-3">

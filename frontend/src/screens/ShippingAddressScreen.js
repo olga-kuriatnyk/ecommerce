@@ -1,4 +1,3 @@
-import { PromiseProvider } from "mongoose";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveShippingAddress } from "../actions/cartActions";
@@ -22,7 +21,7 @@ export default function ShippingAddressScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(saveShippingAddress({ fullName, address, city, state, country, zipCode }));
-    props.history.push('/payment');
+    props.history.push('/placeorder');
   };
 
   return (
