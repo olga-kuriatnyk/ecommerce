@@ -28,8 +28,10 @@ export default function CartScreen(props) {
   };
   return (
     <div className="row top">
-      <div className="col-2">
-        <h1>Shopping Cart</h1>
+      <div className="col-5"></div>
+      <div className="col-4">
+        <h3>Shopping Cart</h3>
+
         {cartItems.length === 0 ? (
           <MessageBox>
             Cart is empty. <Link to="/">Go Shopping</Link>
@@ -47,7 +49,11 @@ export default function CartScreen(props) {
                     ></img>
                   </div>
                   <div className="min-30">
-                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+
+                    <Link to={`/product/${item.product}`}>
+                      <h1>{item.name}</h1>
+                    </Link>
+
                   </div>
                   <div>
                     <select
@@ -77,31 +83,26 @@ export default function CartScreen(props) {
                 </div>
               </li>
             ))}
-          </ul>
-        )}
-      </div>
-      <div className="col-1">
-        <div className="card card-body">
-          <ul>
-            <li>
-              <h2>
+
+            <div className="col-1">
+
+              <h3>
                 Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
                 {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
-              </h2>
-            </li>
-            <li>
-              <button
+              </h3>
+              <p> <button
                 type="button"
                 onClick={checkoutHandler}
                 className="primary block"
                 disabled={cartItems.length === 0}
               >
-                Proceed to Checkout
-              </button>
-            </li>
+                Proceed to checkout
+              </button></p>
+            </div>
           </ul>
-        </div>
+        )}
       </div>
+      <div className="col-5"></div>
     </div>
   );
 }

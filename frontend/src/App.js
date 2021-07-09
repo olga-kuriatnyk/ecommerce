@@ -29,10 +29,10 @@ function App() {
       <div className="grid-container">
         <header className="row">
           <div>
-            <Link className="brand" to="/">green.wave</Link>
+            <Link className="brand" to="/">GREEN.WAVE</Link>
           </div>
           <div>
-            <Link to="/Cart">
+            <Link className="col-1" to="/Cart">
               Cart
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
@@ -58,7 +58,7 @@ function App() {
                 </div>
               ) :
                 (
-                  <Link to="/signin">Sign In</Link>
+                  <Link className="col-1" to="/signin">Sign In</Link>
                 )
             }
           </div>
@@ -78,7 +78,7 @@ function App() {
           ></PrivateRoute>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
-        <footer className="row center"> All rights reserved </footer>
+        <footer className="row center"> GREEN.WAVE Inc. | All Rights Reserved. </footer>
       </div>
     </BrowserRouter>
   );
